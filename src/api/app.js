@@ -1,6 +1,6 @@
 "use strict";
+require('dotenv').config();
 const express = require("express");
-
 const { readUser, createUser } = require("./crud");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -38,6 +38,6 @@ app.post("/api/register", async function (req, res) {
   }
 });
 
-app.listen(3001, () => {
+app.listen( process.env.PORT, () => {
   console.log("Express server listening on port 3001");
 });
