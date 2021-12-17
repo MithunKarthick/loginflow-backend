@@ -1,9 +1,10 @@
 const getModels = require("../db/mongo-models");
 
-const readUser = async ({ email, password }) => {
+const readUser = async ({ email, phone, password }) => {
   try {
     const models = await getModels();
-    const user = await models.User.findOne({ email }).exec();
+    //const user = await models.User.findOne({ email }).exec(); //incase email is required
+    const user = await models.User.findOne({ phone }).exec();
     await user.verifyPassword(password);
     return user;
   } catch (error) {

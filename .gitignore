@@ -109,4 +109,4 @@ dist
 
 .now
 
-.package-lock.json
+package-lock.json
